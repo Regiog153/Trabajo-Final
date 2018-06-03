@@ -1,7 +1,7 @@
 public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String Alumnos = new String();
-		System.out.print("El promedio General del Alumno: "+" "+" es "+Cursos(0));
+		int Alumnos = new int(5);
+		System.out.print("El promedio General del Alumno 1 es: "+Cursos(0));
 		
 	}
 	
@@ -57,7 +57,8 @@ public static void main(String[] args) {
 		return PromedioGeneral;
 		
 	}
-
+	
+	
 	public static int Promedio(int a) {
 		int p;
 		p=a/3;
