@@ -1,0 +1,92 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] Alumnos = new int[5];
+		System.out.println("-----------Estudiante 1------------");
+		Alumnos[0]=Cursos(0);
+		System.out.println("El promedio General del Estudiante 1 es: "+Alumnos[0]);
+		System.out.print("\n");
+		System.out.println("-----------Estudiante 2------------");
+		Alumnos[1]=Cursos(0);
+		System.out.println("El promedio General del Estudiante 2 es: "+Alumnos[1]);
+		System.out.print("\n");
+		System.out.println("-----------Estudiante 3------------");
+		Alumnos[2]=Cursos(0);
+		System.out.println("El promedio General del Estudiante 3 es: "+Alumnos[2]);
+		System.out.print("\n");
+		System.out.println("-----------Estudiante 4------------");
+		Alumnos[3]=Cursos(0);
+		System.out.println("El promedio General del Estudiante 4 es: "+Alumnos[3]);
+		System.out.print("\n");
+		System.out.println("-----------Estudiante 5------------");
+		Alumnos[4]=Cursos(0);
+		System.out.print("\n");
+		System.out.println("El promedio General del Estudiante 5 es: "+Alumnos[4]);
+		
+		
+		
+	}
+	
+	public static int Cursos(int a) {
+		Scanner sc = new Scanner(System.in);
+		int PromedioGeneral = 0;
+        int[] cursos = new int[3];
+	   System.out.print("\n");
+		System.out.println("Técnicas de Expresión Oral");
+		try {
+			System.out.print("Nota 1: ");
+			cursos[0] = sc.nextInt();
+			System.out.print("Nota 2: ");
+			cursos[0] += sc.nextInt();
+			System.out.print("Nota 3: ");
+			cursos[0] += sc.nextInt();
+			
+		System.out.print("Promedio de Técnicas de Expresión Oral: "+Promedio(cursos[0]));
+		
+		System.out.print("\n");
+		System.out.print("\n");
+		
+		System.out.println("Desarrollo Personal");
+	
+			System.out.print("Nota 1: ");
+			cursos[1] = sc.nextInt();
+			System.out.print("Nota 2: ");
+			cursos[1] += sc.nextInt();
+			System.out.print("Nota 3: ");
+			cursos[1] += sc.nextInt();
+		
+		System.out.print("Promedio de Desarrollo Personal: "+Promedio(cursos[1]));
+		
+		System.out.print("\n");
+		System.out.print("\n");
+		
+		System.out.println("Cálculo y Estadística");
+		
+			System.out.print("Nota 1: ");
+			cursos[2] = sc.nextInt();
+			System.out.print("Nota 2: ");
+			cursos[2] += sc.nextInt();
+			System.out.print("Nota 3: ");
+			cursos[2] += sc.nextInt();
+		System.out.print("Promedio de Cálculo y Estadística: "+Promedio(cursos[2]));
+		
+		System.out.print("\n");
+
+		
+		PromedioGeneral=Promedio(cursos[0]+cursos[1]+cursos[2]);
+		}
+		catch (Exception e) {System.out.print("Ingrese sólo un valor numérico");}
+		return PromedioGeneral;
+		
+	}
+	
+	
+	public static int Promedio(int a) {
+		int p;
+		p=a/3;
+		return p;
+	}
+
+}
