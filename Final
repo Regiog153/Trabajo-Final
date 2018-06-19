@@ -26,6 +26,8 @@ public class Main {
 		System.out.println("El promedio General del Estudiante 5 es: "+Alumnos[4]);
 		
 		MáximoPromedio(Alumnos);
+		MenorPromedio(Alumnos);
+	
 		
 	}
 	
@@ -97,5 +99,15 @@ public class Main {
 		}
 		System.out.println("El promedio máximo es: "+max);
 	}
+	  public static void MenorPromedio(int[] alumnos){
+		 	int min = alumnos[0];
+		 	for (int a=0; a<alumnos.length;a++)
+		 		if(alumnos[a]<min)
+		 			min=alumnos[a];
+		 	System.out.println("El menor promedio es:"+min);
+		 }
+
+}
+
 
 }
