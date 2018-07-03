@@ -1,0 +1,36 @@
+
+import java.io.*; 
+public class Teclado {
+
+InputStreamReader teclado; 
+  BufferedReader buffer; 
+  public Teclado()  {//Constructor 
+   teclado=new InputStreamReader(System.in); 
+    buffer=new BufferedReader(teclado); 
+  }   
+  public String leer(){ 
+  String cadena=new String(); 
+   try { 
+	   if (buffer.ready()) cadena=buffer.readLine(); 
+             cadena=buffer.readLine(); 
+   } 
+   catch (IOException excep)   { 
+           System.out.println("Error de IO");} 
+   return(cadena); 
+} 
+public void espera(){ 
+System.out.println("Presiona cualquier tecla"); 
+    leer();   
+} 
+public void limpiarTeclado() 
+{  String cadena=new String(); 
+    try   { if (buffer.ready()) cadena=buffer.readLine(); 
+                cadena=buffer.readLine(); 
+   } 
+   catch(IOException excep) 
+   { System.out.println("Error de IO");} 
+  }  
+ public static void clrscr() {     
+          for(int i=0;i<25;i++) System.out.println("\n"); 
+ }   
+} 
