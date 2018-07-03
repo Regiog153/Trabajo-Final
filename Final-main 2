@@ -1,0 +1,153 @@
+import java.util.Scanner;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] a = new int[5];
+		
+		int opcion;
+		try {
+		do{ 
+		System.out.println("1) Ingresar notas de los estudiantes"); 
+		System.out.println("2) Máximo promedio");
+		System.out.println("3) Menor promedio");
+		System.out.println("4) Fin del programa");
+		System.out.println("Opción: ");
+		
+		opcion=sc.nextInt();
+		switch(opcion) {
+		case 1: a=Estudiantes(a);
+		
+		break;
+		case 2: MáximoPromedio(a);
+		 
+		break;
+		case 3: MenorPromedio(a);
+		
+		break;
+		case 4: break;
+		}
+		
+		}while(opcion!=4);
+		}
+		catch(Exception e) {System.out.println("Ingrese sólo un valor numérico");}
+		} 
+
+		
+	
+	public static int[] Estudiantes(int a[]) {
+		int[] Estudiantes = new int[5];
+		System.out.println("-----------Estudiante 1------------");
+		Estudiantes[0]=Cursos(0);
+		System.out.println("El promedio General del Estudiante 1 es: "+Estudiantes[0]);
+		System.out.print("\n");
+		System.out.println("-----------Estudiante 2------------");
+		Estudiantes[1]=Cursos(0);
+		System.out.println("El promedio General del Estudiante 2 es: "+Estudiantes[1]);
+		System.out.print("\n");
+		System.out.println("-----------Estudiante 3------------");
+		Estudiantes[2]=Cursos(0);
+		System.out.println("El promedio General del Estudiante 3 es: "+Estudiantes[2]);
+		System.out.print("\n");
+		System.out.println("-----------Estudiante 4------------");
+		Estudiantes[3]=Cursos(0);
+		System.out.println("El promedio General del Estudiante 4 es: "+Estudiantes[3]);
+		System.out.print("\n");
+		System.out.println("-----------Estudiante 5------------");
+		Estudiantes[4]=Cursos(0);
+		System.out.print("\n");
+		System.out.println("El promedio General del Estudiante 5 es: "+Estudiantes[4]);
+		return Estudiantes;
+
+	}
+	
+	public static int Cursos(int a) {
+		Scanner sc = new Scanner(System.in);
+		int PromedioGeneral = 0;
+        int[] curso1 = new int[3];
+        int[] curso2 = new int[3];
+        int[] curso3 = new int[3];
+        int[] promedio = new int[3];
+	   System.out.print("\n");
+		System.out.println("Técnicas de Expresión Oral");
+		try {
+			System.out.print("Nota 1: ");
+			curso1[0] = sc.nextInt();
+			System.out.print("Nota 2: ");
+			curso1[1] = sc.nextInt();
+			System.out.print("Nota 3: ");
+			curso1[2] = sc.nextInt();
+			
+			promedio[0]=Promedio(curso1[0]+curso1[1]+curso1[2]);
+			
+		System.out.print("Promedio de Técnicas de Expresión Oral: "+promedio[0]);
+		
+		System.out.print("\n");
+		System.out.print("\n");
+		
+		System.out.println("Desarrollo Personal");
+	
+			System.out.print("Nota 1: ");
+			curso2[0] = sc.nextInt();
+			System.out.print("Nota 2: ");
+			curso2[1] = sc.nextInt();
+			System.out.print("Nota 3: ");
+			curso2[2] = sc.nextInt();
+			
+			promedio[1]=Promedio(curso2[0]+curso2[1]+curso2[2]);
+		
+		System.out.print("Promedio de Desarrollo Personal: "+promedio[1]);
+		
+		System.out.print("\n");
+		System.out.print("\n");
+		
+		System.out.println("Cálculo y Estadística");
+		
+			System.out.print("Nota 1: ");
+			curso3[0] = sc.nextInt();
+			System.out.print("Nota 2: ");
+			curso3[1] = sc.nextInt();
+			System.out.print("Nota 3: ");
+			curso3[2] = sc.nextInt();
+			
+			promedio[2]=Promedio(curso3[0]+curso3[1]+curso3[2]);
+			
+		System.out.print("Promedio de Cálculo y Estadística: "+promedio[2]);
+		
+		System.out.print("\n");
+
+		PromedioGeneral=Promedio(promedio[0]+promedio[1]+promedio[2]);
+		
+		}
+		catch (Exception e) {System.out.print("Ingrese sólo un valor numérico");}
+		
+		return PromedioGeneral;
+	}
+	
+	
+	public static int Promedio(int a) {
+		int p;
+		p=a/3;
+		return p;
+	}
+	
+	public static void MáximoPromedio(int[] alumnos) {
+		int max;
+		max=alumnos[0];
+		for (int pos=0; pos<alumnos.length;pos++) {
+			if (alumnos[pos]>max)
+				max=alumnos[pos];
+		}
+		System.out.println("---------El promedio máximo es: "+max+"---------");
+	}
+	
+	  public static void MenorPromedio(int[] alumnos){
+		 	int min = alumnos[0];
+		 	for (int a=0; a<alumnos.length;a++)
+		 		if(alumnos[a]<min)
+		 			min=alumnos[a];
+		 	System.out.println("---------El menor promedio es:"+min+"---------");
+		 }
+}
